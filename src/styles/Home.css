@@ -1,0 +1,5 @@
+.home-banner {
+    width: 100%;
+    height: 15em;
+    background: url('../assets/homeBackground.png') no-repeat;
+}
