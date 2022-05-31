@@ -1,17 +1,25 @@
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.logo--header {
+.logo--img {
     height: 4.25em;
 }
 
 .nav__link{
+    color: #ff6060;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
     text-decoration: none;
-
+    margin-left: 3.5625em;
 }
 
 .nav__link:hover{
     text-decoration: underline;
+}
+.nav, .logo {
+    border: 1px solid yellowgreen;
 }

@@ -3,7 +3,7 @@ import '../../styles/Home.css'
 
 const locations = [
   {
-    id:'',
+    id:'123',
     title:'Location 1',
     cover:'',
     pictures:[],
@@ -15,7 +15,7 @@ const locations = [
     tags:[],
   },
   {
-    id:'',
+    id:'456',
     title:'Location 2',
     cover:'',
     pictures:[],
@@ -27,7 +27,7 @@ const locations = [
     tags:[],
   },
   {
-    id:'',
+    id:'789',
     title:'Location 3',
     cover:'',
     pictures:[],

@@ -1,9 +1,9 @@
+import '../../styles/About.css'
+
 function About() {
     return (
       <div>
-        <div>
-        A propos - BANNER
-        </div>
+        <div className='about__banner'></div>
       </div>
     );
   }
