@@ -1,8 +1,10 @@
+import '../../styles/Card.css'
+
 function Card ({ title, cover }) {
     return (
-        <div>
-            <img src={cover} alt={title}/>
-            <p>{title}</p>
+        <div className='card__container'>
+            <img src={cover} alt={title} className='card__cover'/>
+            <h2 className='card__title'>{title}</h2>
         </div>
     )
 }

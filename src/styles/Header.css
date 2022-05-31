@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo--header {
+    height: 4.25em;
+}
+
+.nav__link{
+    text-decoration: none;
+
+}
+
+.nav__link:hover{
+    text-decoration: underline;
+}

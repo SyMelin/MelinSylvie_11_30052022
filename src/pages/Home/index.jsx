@@ -44,8 +44,8 @@ const locations = [
 function Home() {
   return (
     <div>
-      <div className='home-banner'>
-        <h1>Chez vous, partout et ailleurs - BANNER</h1>
+      <div className='home__banner'>
+        <h1>Chez vous, partout et ailleurs</h1>
       </div>
       {locations.map((location) => (
         <Card

@@ -1,5 +1,18 @@
-.home-banner {
+.home__banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 15em;
+    height: 13.938em;
+    border-radius: 1.5625em;
     background: url('../assets/homeBackground.png') no-repeat;
+}
+
+.home__banner h1 {
+    font-family: "Montserrat", sans-serif ;
+    font-weight: 500;
+    font-size: 3em;
+    color: #FFFFFF;
+
 }
