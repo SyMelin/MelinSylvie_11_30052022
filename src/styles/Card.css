@@ -1,23 +1,28 @@
 .card__container {
     background: linear-gradient(#FF6060, #803131);;
-    width: 21.25em;
+    width: 340px;
     height: 21.25em;
     border-radius: 0.625em;
     display: flex;
     justify-content:left;
+    position: relative;
+    overflow: hidden;
     /*align-items: flex-end;*/
     /*object-fit: cover;*/
 }
 
 .card__cover{
-    /*object-fit: cover;*/
-    width: 21.25em;
+    object-fit: cover;
+    width: 100%;
+    /*z-index: 0;*/
 }
 
 .card__title {
-    border: 1px solid yellowgreen;
     color: white;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 1.125em;
+    align-self: flex-end;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
 }

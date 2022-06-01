@@ -15,3 +15,16 @@
     font-size: 3em;
     color: #FFFFFF;
 }
+
+.cards__container {
+    display: grid;
+    column-gap: 3.75em;
+    row-gap: 3.125em;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    background-color: #F7F7F7;
+    border-radius: 1.5625em;
+    padding: 3.5em 3.125em;
+    max-width: 1240px;
+}
