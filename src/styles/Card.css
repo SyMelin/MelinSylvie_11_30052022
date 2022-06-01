@@ -5,7 +5,13 @@
     border-radius: 0.625em;
     display: flex;
     justify-content:left;
-    align-items: flex-end;
+    /*align-items: flex-end;*/
+    /*object-fit: cover;*/
+}
+
+.card__cover{
+    /*object-fit: cover;*/
+    width: 21.25em;
 }
 
 .card__title {

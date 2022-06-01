@@ -1,6 +1,9 @@
+import { useState, useEffect } from 'react';
 import Card from '../../components/Card'
 import '../../styles/Home.css'
+import data from '../../data/locationsList.json'
 
+/*
 const locations = [
   {
     id:'123',
@@ -39,21 +42,26 @@ const locations = [
     tags:[],
   }
 ]
+*/
 
 
 function Home() {
+  const locationsList = data
+
   return (
     <div>
       <div className='home__banner'>
         <h1>Chez vous, partout et ailleurs</h1>
       </div>
-      {locations.map((location) => (
-        <Card
-          key={location.id}
-          title={location.title}
-          cover={location.cover}
-        />
-      ))}
+      {locationsList.map((location) => (
+      <Card
+        key={location.id}
+        title={location.title}
+        cover={location.cover}
+      />
+))}
+
+      
     </div>
   );
 }
