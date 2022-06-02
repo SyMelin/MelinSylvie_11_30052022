@@ -8,7 +8,9 @@ function Dropdown ({title, text}) {
                 <h2 className="dropdown__title">{title}</h2>
                 <img className="dropdown__button" src={arrowUp} alt="Fermer" />
             </div>
-            <p className="dropdown__bottom">{text}</p>
+             { typeof text === 'object' ?
+                <ul className="dropdown__bottom dropdownList">{text.map((item) => <li>{item}</li>)}</ul>
+                : <p className="dropdown__bottom dropdownText">{text}</p>}
         </div>
     )
 }

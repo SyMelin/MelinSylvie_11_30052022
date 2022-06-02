@@ -28,3 +28,7 @@
     padding: 3.125em 1.25em;
     margin-top: -1.875em;
 }
+
+.dropdownList {
+    list-style: none;
+}

@@ -22,10 +22,10 @@ function Accomodation() {
     return dropdownFilled
     }
     const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownTitles.indexOf(title)))
-    console.log(dropdownsList)
+    //console.log(dropdownsList)
 
     const hostName = accomodationData.host.name.split(" ")
-    console.log ('hostName', hostName)
+    //console.log ('hostName', hostName)
 
     return (
         <div className='accomodation__wrapper'>
@@ -55,9 +55,9 @@ function Accomodation() {
             <div className='accomodation__dropdowns'>
                 {dropdownsList.map((dropdown) => (
                     <Dropdown
-                    key={`dropdown--${dropdown.index}`}
-                    title={dropdown.title}
-                    text={dropdown.text}
+                        key={`dropdown--${dropdown.index}`}
+                        title={dropdown.title}
+                        text={dropdown.text}
                     />
                 ))}
             </div>

@@ -17,7 +17,7 @@ function fillDropDownContent(index) {
   return dropdownFilled
 }
 const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownTitles.indexOf(title)))
-console.log(dropdownsList)
+//console.log(dropdownsList)
 
 function About() {
     return (
