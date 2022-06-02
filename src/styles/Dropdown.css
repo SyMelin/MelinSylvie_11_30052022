@@ -18,6 +18,10 @@
     font-size: 1.125em;
 }
 
+.dropdown__button {
+   cursor: pointer;
+}
+
 .dropdown__bottom {
     color: #FF6060;
     background-color: #f7f7f7;
