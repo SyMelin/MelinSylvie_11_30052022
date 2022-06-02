@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
 import Card from '../../components/Card'
+import data from '../../data/accomodationsList.json'
 import '../../styles/Home.css'
-import data from '../../data/locationsList.json'
 
 function Home() {
-  const locationsList = data
+  const AccomodationsList = data
 
   return (
     <div>
@@ -12,11 +13,12 @@ function Home() {
         <h1>Chez vous, partout et ailleurs</h1>
       </div>
       <div className='cards__container'>
-        {locationsList.map((location) => (
+        {AccomodationsList.map((accomodation) => (
         <Card
-          key={location.id}
-          title={location.title}
-          cover={location.cover}
+          key={accomodation.id}
+          id={accomodation.id}
+          title={accomodation.title}
+          cover={accomodation.cover}
         />
         ))}
       </div>    
