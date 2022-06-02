@@ -24,6 +24,8 @@ function Accomodation() {
     const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownTitles.indexOf(title)))
     console.log(dropdownsList)
 
+    const hostName = accomodationData.host.name.split(" ")
+    console.log ('hostName', hostName)
 
     return (
         <div className='accomodation__wrapper'>
@@ -37,12 +39,16 @@ function Accomodation() {
                         <p className='accomodation__location'>{accomodationData.location}</p>
                     </div>
                     <div className='host'>
-                        <p className='host__name'>{accomodationData.host.name}</p>
+                        <p className='host__name'>{hostName[0]}<br />{hostName[1]}</p>
                         <img className='host__picture' src={accomodationData.host.picture} alt="" />
                     </div>
                 </div>
                 <div className='mainInfo__bottom'>
-                    <div className='accomodation__tags'>TAGS</div>
+                    <div className='accomodation__tags'>
+                        {accomodationData.tags.map((tag) => (
+                            <div className='tag'>{tag}</div>
+                        ))}
+                    </div>
                     <div className='accomodation__stars'>STARS</div>
                 </div>
             </div>
