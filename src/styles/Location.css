@@ -1,0 +1,39 @@
+.accomodation__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accomodation__carousel {
+    border: 1px solid green;
+}
+
+.accomodation__mainInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid;
+}
+
+.mainInfo__top {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid blue;
+}
+
+.host {
+    display: flex;
+}
+
+.mainInfo__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid pink;
+}
+
+.mainInfo__bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

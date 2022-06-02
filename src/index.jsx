@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/index';
+import Accomodation from './pages/Accomodation';
 import About from './pages/About/index'
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -14,6 +15,7 @@ root.render(
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
+        <Route path="/accomodation" element={<Accomodation />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />
       </Routes>
