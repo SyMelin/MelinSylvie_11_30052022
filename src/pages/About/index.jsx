@@ -12,11 +12,11 @@ const dropdownTexts = [
 
 const dropdownContent= {title:"", text:""}
 
-function xxx(index) {
-  const test = { title: dropdownTitles[index], text: dropdownTexts[index]}
-  return test
+function fillDropDownContent(index) {
+  const dropdownFilled = { title: dropdownTitles[index], text: dropdownTexts[index]}
+  return dropdownFilled
 }
-const dropdownsList= dropdownTitles.map((title) => xxx(dropdownTitles.indexOf(title)))
+const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownTitles.indexOf(title)))
 console.log(dropdownsList)
 
 function About() {
@@ -25,11 +25,11 @@ function About() {
         <div className='about__banner'></div>
         <div className='dropdowns__container'>
         {dropdownsList.map((dropdown) => (
-        <Dropdown
-          key={`dropdown--${dropdown.index}`}
-          title={dropdown.title}
-          text={dropdown.text}
-        />
+          <Dropdown
+            key={`dropdown--${dropdown.index}`}
+            title={dropdown.title}
+            text={dropdown.text}
+          />
         ))}
       </div>  
       </div>

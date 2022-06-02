@@ -37,3 +37,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.accomodation__dropdowns {
+    display: grid;
+    column-gap: 4.75em;
+    grid-template-columns: repeat(2, 1fr);
+}

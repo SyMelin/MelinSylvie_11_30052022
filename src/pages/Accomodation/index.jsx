@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Dropdown from '../../components/Dropdown'
 import data from '../../data/accomodationsList.json'
 import '../../styles/Accomodation.css'
 
+const dropdownTitles = ["Description", "Équipements"]
 
 
 function Accomodation() {
@@ -10,7 +12,18 @@ function Accomodation() {
     const { accomodationID } = useParams()
    // console.log( accomodationID)
     const accomodationData = AccomodationsList.find(accomodation => accomodation.id === accomodationID)
-  //  console.log(accomodationData)   
+  //  console.log(accomodationData)
+
+    const dropdownTexts= [accomodationData.description, accomodationData.equipments]
+    const dropdownContent= {title:"", text:""}
+
+    function fillDropDownContent(index) {
+    const dropdownFilled = { title: dropdownTitles[index], text: dropdownTexts[index]}
+    return dropdownFilled
+    }
+    const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownTitles.indexOf(title)))
+    console.log(dropdownsList)
+
 
     return (
         <div className='accomodation__wrapper'>
@@ -32,9 +45,16 @@ function Accomodation() {
                     <div className='accomodation__tags'>TAGS</div>
                     <div className='accomodation__stars'>STARS</div>
                 </div>
-                
             </div>
-            <div className='accomodation__dropdowns'>DROPDOWNS</div>
+            <div className='accomodation__dropdowns'>
+                {dropdownsList.map((dropdown) => (
+                    <Dropdown
+                    key={`dropdown--${dropdown.index}`}
+                    title={dropdown.title}
+                    text={dropdown.text}
+                    />
+                ))}
+            </div>
         </div>
     )
 
