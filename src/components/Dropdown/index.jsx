@@ -19,7 +19,8 @@ function Dropdown ({title, text}) {
             </div>
              { typeof text === 'object' ?
                 <ul className="dropdown__bottom dropdownList">{text.map((item) => <li>{item}</li>)}</ul>
-                : <p className="dropdown__bottom dropdownText">{text}</p>}
+                : <p className="dropdown__bottom dropdownText">{text}</p>
+                }
         </div>
     ) : (
         <div className="dropdown__container">

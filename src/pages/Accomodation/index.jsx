@@ -16,6 +16,8 @@ function Accomodation() {
     const accomodationData = AccomodationsList.find(accomodation => accomodation.id === accomodationID)
   //  console.log(accomodationData)
 
+  const [translateLength, setTranslateLength] = useState(0)
+
     const dropdownTexts= [accomodationData.description, accomodationData.equipments]
     const dropdownContent= {title:"", text:""}
 
@@ -31,7 +33,13 @@ function Accomodation() {
 
     return (
         <div className='accomodation__wrapper'>
-            <Gallery />
+            <Gallery
+                pics={accomodationData.pictures}
+                length={accomodationData.pictures.length}
+                accId={accomodationID}
+                translateLength={translateLength}
+                setTranslateLength={setTranslateLength}
+            />
             <div className='accomodation__mainInfo'>
                 <div className='mainInfo__top'>
                     <div className='accomodation'>
@@ -49,7 +57,10 @@ function Accomodation() {
                             <div className='tag'>{tag}</div>
                         ))}
                     </div>
-                    <Stars rating={accomodationData.rating} arrayLength='5' />
+                    <Stars
+                        rating={accomodationData.rating}
+                        arrayLength='5'
+                    />
                 </div>
             </div>
             <div className='accomodation__dropdowns'>
