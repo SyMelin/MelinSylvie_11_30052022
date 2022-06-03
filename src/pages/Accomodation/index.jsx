@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Gallery from '../../components/Gallery'
+import Stars  from '../../components/Stars'
 import Dropdown from '../../components/Dropdown'
 import data from '../../data/accomodationsList.json'
 import '../../styles/Accomodation.css'
@@ -29,9 +31,7 @@ function Accomodation() {
 
     return (
         <div className='accomodation__wrapper'>
-            <div className='accomodation__carousel'>
-                CAROUSSEL
-            </div>
+            <Gallery />
             <div className='accomodation__mainInfo'>
                 <div className='mainInfo__top'>
                     <div className='accomodation'>
@@ -49,7 +49,7 @@ function Accomodation() {
                             <div className='tag'>{tag}</div>
                         ))}
                     </div>
-                    <div className='accomodation__stars'>STARS</div>
+                    <Stars rating={accomodationData.rating} arrayLength='5' />
                 </div>
             </div>
             <div className='accomodation__dropdowns'>

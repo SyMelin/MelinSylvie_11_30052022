@@ -1,0 +1,9 @@
+.stars__wrapper {
+    display: flex;
+    column-gap: 0.625em;
+}
+
+.star {
+    width: 1.875em;
+    height: 1.875em;
+}
