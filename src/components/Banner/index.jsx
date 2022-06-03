@@ -8,7 +8,7 @@ function Banner({type}) {
             { type === 'home' ?
                 <div
                     className='banner__container'
-                    style={{backgroundImage: {bannerHome}}}
+                    style={{backgroundImage: `url(${bannerHome})`}}
                 >
                     <span className='banner__filter'></span>
                     <h1 className='banner__title'>Chez vous, partout et ailleurs</h1>
@@ -16,7 +16,7 @@ function Banner({type}) {
                 : type === 'about' ?
                     <div
                         className='banner__container'
-                        style={{backgroundImage: {bannerAbout}}}
+                        style={{backgroundImage: `url(${bannerAbout})`}}
                     >
                         <span className='banner__filter'></span>
                     </div>
