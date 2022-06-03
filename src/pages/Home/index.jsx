@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
+import Banner from '../../components/Banner'
 import Card from '../../components/Card'
 import data from '../../data/accomodationsList.json'
 import '../../styles/Home.css'
@@ -9,9 +10,7 @@ function Home() {
 
   return (
     <div>
-      <div className='home__banner'>
-        <h1>Chez vous, partout et ailleurs</h1>
-      </div>
+      <Banner type='home'/>
       <div className='cards__container'>
         {AccomodationsList.map((accomodation) => (
         <Card

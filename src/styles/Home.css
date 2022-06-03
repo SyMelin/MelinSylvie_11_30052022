@@ -1,28 +1,3 @@
-.home__banner {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 13.938em;
-    border-radius: 1.5625em;
-    background: url('../assets/homeBackground.png') no-repeat;
-}
-
-.home__banner h1 {
-    font-family: "Montserrat", sans-serif ;
-    font-weight: 500;
-    font-size: 3em;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #FFFFFF;
-}
-
 .cards__container {
     display: grid;
     column-gap: 3.75em;

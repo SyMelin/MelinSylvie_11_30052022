@@ -1,5 +1,6 @@
-import '../../styles/About.css'
+import Banner from '../../components/Banner'
 import Dropdown from '../../components/Dropdown'
+import '../../styles/About.css'
 
 const dropdownTitles = ["Fiabilité", "Respect", "Service", "Sécurité"]
 
@@ -22,7 +23,7 @@ const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownT
 function About() {
     return (
       <div>
-        <div className='about__banner'></div>
+        <Banner type='about' />
         <div className='dropdowns__container'>
         {dropdownsList.map((dropdown) => (
           <Dropdown
