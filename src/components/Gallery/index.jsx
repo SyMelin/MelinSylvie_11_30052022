@@ -43,24 +43,17 @@ function Gallery({pics, length, accId}) {
             </div>
             { length > 1 ?
                 <div className='gallery__nav'>
-                    <Button
-                        direction='previous'
-                        translateLength={translateLength}
-                        setTranslateLength={setTranslateLength}
-                        picNumber={picNumber}
-                        updatePicNumber={updatePicNumber}
-                        picWidth={picWidth}
-                        length={length}
-                    />  
-                    <Button
-                        direction='next'
-                        translateLength={translateLength}
-                        setTranslateLength={setTranslateLength}
-                        picNumber={picNumber}
-                        updatePicNumber={updatePicNumber}
-                        picWidth={picWidth}
-                        length={length}
-                    />          
+                    {['previous', 'next'].map((el) => <Button
+                                                            direction={el}
+                                                            translateLength={translateLength}
+                                                            setTranslateLength={setTranslateLength}
+                                                            picNumber={picNumber}
+                                                            updatePicNumber={updatePicNumber}
+                                                            picWidth={picWidth}
+                                                            length={length}
+                                                        />
+                                            )
+                    }
                 </div>
                 : null
             }     
