@@ -1,11 +1,11 @@
 .btn__container {
     padding: 1.46em;
+    cursor: pointer;
 }
 
 .btn {
     width: 46.68px;
     height: 79.2px;
-    background-color: olivedrab;
     position: relative;
     z-index: 1;
 }

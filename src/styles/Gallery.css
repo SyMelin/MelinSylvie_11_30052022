@@ -1,16 +1,14 @@
 .gallery {
     width: 1240px;
     height: 25.938em;
-    border: 1px solid orange;
+    /*border: 1px solid orange;*/
     display: flex;
-  /*  flex-direction: column;*/
-   /* align-items: center;*/
-   /* overflow: hidden;*/
     position: relative;
 }
 
 .gallery__view {
     overflow: hidden;
+    border-radius: 1.5625em;
     width: inherit;
 }
 

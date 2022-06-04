@@ -12,22 +12,20 @@ const dropdownTitles = ["Description", "Équipements"]
 function Accomodation() {
     const AccomodationsList = data
     const { accomodationID } = useParams()
-   // console.log( accomodationID)
+    //console.log( accomodationID)
     const accomodationData = AccomodationsList.find(accomodation => accomodation.id === accomodationID)
-  //  console.log(accomodationData)
-
-  const [translateLength, setTranslateLength] = useState(0)
+    //console.log(accomodationData)
 
     const dropdownTexts= [accomodationData.description, accomodationData.equipments]
     const dropdownContent= {title:"", text:""}
 
     function fillDropDownContent(index) {
-    const dropdownFilled = { title: dropdownTitles[index], text: dropdownTexts[index]}
-    return dropdownFilled
+        const dropdownFilled = { title: dropdownTitles[index], text: dropdownTexts[index]}
+        return dropdownFilled
     }
+    
     const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownTitles.indexOf(title)))
     //console.log(dropdownsList)
-
     const hostName = accomodationData.host.name.split(" ")
     //console.log ('hostName', hostName)
 
@@ -37,8 +35,6 @@ function Accomodation() {
                 pics={accomodationData.pictures}
                 length={accomodationData.pictures.length}
                 accId={accomodationID}
-                //translateLength={translateLength}
-                //setTranslateLength={setTranslateLength}
             />
             <div className='accomodation__mainInfo'>
                 <div className='mainInfo__top'>
