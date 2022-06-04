@@ -1,17 +1,44 @@
 import { useState, useEffect } from 'react'
-import Button from '../Button'
+//import Button from '../Button'
 import '../../styles/Gallery.css'
 
-function Gallery({pics, length, accId, translateLength, setTranslateLength}) {
+
+
+function Gallery({pics, length, accId}) {
     const galleryWidth = "1240px"
     const ratio = 1 / (parseInt(length) + 1) * 100
     const wrapperWidth= `${parseInt(galleryWidth) * (parseInt(length) + 1)}px`
     const galleryWidthInt = parseInt(galleryWidth)
-   // const picWidth = ratio
+    const picWidth = ratio
     const picWidthPc = `${ratio}%`
    // console.log(picWidthPc)
 
-  // const [translateLength, setTranslateLength] = useState(0)
+   const [translateLength, setTranslateLength] = useState(0)
+   console.log(translateLength)
+   const [picNumber, updatePicNumber] = useState(1)
+   console.log(picNumber)
+
+   function goPrev() {
+        if (picNumber > 1) {
+        // console.log("CLIC")
+        setTranslateLength(translateLength + picWidth)
+        updatePicNumber(picNumber - 1)
+        } else {
+        setTranslateLength(-picWidth * (length-1))
+        updatePicNumber(length)
+        }
+    }
+  
+   function goNext() {
+       if (picNumber < length) {
+        // console.log("CLIC")
+        setTranslateLength(translateLength - picWidth)
+        updatePicNumber(picNumber + 1)
+       } else {
+        setTranslateLength(0)
+        updatePicNumber(1)
+       }
+   }
 
     return (
         <div className='gallery'>
@@ -20,7 +47,7 @@ function Gallery({pics, length, accId, translateLength, setTranslateLength}) {
                     className='gallery__wrapper'
                     style={{width: wrapperWidth,
                             height: '415px',
-                            transform: `translate(${translateLength})`
+                            transform: `translate(${translateLength}%)`
                         }}
                 >
                     {pics.map((pic, index) =>
@@ -41,13 +68,15 @@ function Gallery({pics, length, accId, translateLength, setTranslateLength}) {
                 </div>
             </div>
             <div className='gallery__nav'>
-                <Button
-                    direction='previous'
-                    picLength= {picWidthPc}
-                    translateLength={translateLength}
-                    setTranslateLength={setTranslateLength}
-                 />
-                <Button direction='next' />
+                <button
+                    style={{width: '40px', height: '40px', backgroundColor: 'green'}}
+                    onClick={goPrev}>T: {translateLength} ; Nb: {picNumber}
+                </button>
+                <button
+                    style={{width: '40px', height: '40px', backgroundColor: 'red'}}
+                    onClick={goNext}>T: {translateLength} ; Nb: {picNumber}
+                </button>
+                
             </div>
         </div>
                     
@@ -56,3 +85,11 @@ function Gallery({pics, length, accId, translateLength, setTranslateLength}) {
 }
 
 export default Gallery
+/*
+<Button
+direction='previous'
+picLength= {picWidthPc}
+translateLength={translateLength}
+setTranslateLength={setTranslateLength}
+/>
+*/

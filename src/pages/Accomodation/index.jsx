@@ -37,8 +37,8 @@ function Accomodation() {
                 pics={accomodationData.pictures}
                 length={accomodationData.pictures.length}
                 accId={accomodationID}
-                translateLength={translateLength}
-                setTranslateLength={setTranslateLength}
+                //translateLength={translateLength}
+                //setTranslateLength={setTranslateLength}
             />
             <div className='accomodation__mainInfo'>
                 <div className='mainInfo__top'>
