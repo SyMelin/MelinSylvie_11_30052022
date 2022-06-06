@@ -1,20 +1,15 @@
 .dropdown__top {
     color: #FFFFFF;
     background-color: #FF6060;
-    height: 3.25em;
-    border-radius: 0.625em;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 1.25em;
-    padding-right: 0.625em;
     position: relative;
     z-index: 1;
 }
 
-.dropdown__title {
+.dropdown__title, .dropdown__bottom {
     font-weight: 500;
-    font-size: 1.125em;
 }
 
 .dropdown__button {
@@ -23,13 +18,47 @@
 
 .dropdown__bottom {
     background-color: #f7f7f7;
-    border-radius: 0.625em;
-    font-weight: 500;
-    font-size: 1.125em;
-    padding: 3.125em 1.25em;
     margin-top: -1.875em;
 }
 
 .dropdownList {
     list-style: none;
+}
+
+@media screen and (max-width: 767.98px) {
+    .dropdown__top{
+        border-radius: 0.3125em;
+        height: 1.88em;
+        padding-left: 0.72em;
+        padding-right: 0.625em;
+    }
+    .dropdown__title {
+        font-size: 0.8em;
+    }
+    .dropdown__button {
+        width: 0.95em;
+        height: 0.56em;
+     }
+    .dropdown__bottom {
+        border-radius: 0.3125em;
+        font-size: 0.75em;
+        padding: 3em 0.72em 0.25em 0.72em;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .dropdown__top{
+        border-radius: 0.625em;
+        height: 3.25em;
+        padding-left: 1.25em;
+        padding-right: 0.4em;
+    }
+    .dropdown__title {
+        font-size: 1.125em;
+    }
+    .dropdown__bottom {
+        border-radius: 0.625em;
+        font-size: 1.125em;
+        padding: 3.125em 1.25em;
+    }
 }

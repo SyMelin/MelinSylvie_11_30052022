@@ -3,7 +3,24 @@
     column-gap: 0.625em;
 }
 
-.star {
-    width: 1.875em;
-    height: 1.875em;
+
+
+.star__img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 767.98px) {
+    .star {
+        width: 0.9375em;
+        height: 0.9375em;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .star {
+        width: 1.875em;
+        height: 1.875em;
+    }
 }

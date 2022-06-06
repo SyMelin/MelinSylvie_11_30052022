@@ -37,21 +37,21 @@ function Accomodation() {
                 accId={accomodationID}
             />
             <div className='accomodation__info'>
-                <div className='info__top'>
+                <div className='info__left'>
                     <div className='accomodation__data'>
                         <h1 className="accomodation__title">{accomodationData.title}</h1>
                         <p className='accomodation__location'>{accomodationData.location}</p>
+                        <div className='accomodation__tags'>
+                            {accomodationData.tags.map((tag) => (
+                                <div className='tag'>{tag}</div>
+                            ))}
+                        </div>
                     </div>
+                </div>
+                <div className='info__right'>
                     <div className='host__data'>
                         <p className='host__name'>{hostName[0]}<br />{hostName[1]}</p>
                         <img className='host__picture' src={accomodationData.host.picture} alt="" />
-                    </div>
-                </div>
-                <div className='info__bottom'>
-                    <div className='accomodation__tags'>
-                        {accomodationData.tags.map((tag) => (
-                            <div className='tag'>{tag}</div>
-                        ))}
                     </div>
                     <Stars
                         rating={accomodationData.rating}
