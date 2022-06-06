@@ -3,9 +3,9 @@ import Button from '../Button'
 import '../../styles/Gallery.css'
 
 function Gallery({pics, length, accId}) {
-    const galleryWidth = "1240px"
+    const galleryWidth = "100%"
     const ratio = 1 / (parseInt(length) + 1) * 100
-    const wrapperWidth= `${parseInt(galleryWidth) * (parseInt(length) + 1)}px`
+    const wrapperWidth= `${parseInt(galleryWidth) * (parseInt(length) + 1)}%`
     const galleryWidthInt = parseInt(galleryWidth)
     const picWidth = ratio
     const picWidthPc = `${ratio}%`
@@ -20,7 +20,7 @@ function Gallery({pics, length, accId}) {
                 <div
                     className='gallery__wrapper'
                     style={{width: wrapperWidth,
-                            height: '415px',
+                            height: 'inherit',
                             transform: `translate(${translateLength}%)`
                         }}
                 >
@@ -31,12 +31,9 @@ function Gallery({pics, length, accId}) {
                             className='pic__container'
                             style={{
                                 width: picWidthPc,
-                                height: '100%',
-                                backgroundImage: `url(${pic})`,
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'center'
                             }}
                         >
+                            <img className='gallery__img' src={pic} alt='' />
                         </div>
                     )}
                 </div>
