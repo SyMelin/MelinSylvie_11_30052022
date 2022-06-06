@@ -1,4 +1,5 @@
 .card__container {
+    position: relative;
     background: linear-gradient(#FF6060, #803131);;
     width: 340px;
     height: 21.25em;
@@ -12,9 +13,20 @@
 }
 
 .card__cover{
+    position: relative;
     object-fit: cover;
     width: 100%;
-    /*z-index: 0;*/
+    z-index: 0;
+}
+
+.card__filter {
+    position: absolute;
+    display: flex;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(rgba(225, 225, 225, 0), 85%, rgba(0, 0, 0, 0.55));
+    z-index: 1;
 }
 
 .card__title {
@@ -24,5 +36,6 @@
     font-size: 1.125em;
     align-self: flex-end;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.1);
+   /* background-color: rgba(0, 0, 0, 0.1);*/
+   z-index: 2;
 }
