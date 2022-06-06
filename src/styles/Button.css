@@ -1,11 +1,29 @@
 .btn__container {
-    padding: 1.46em;
     cursor: pointer;
 }
 
 .btn {
-    width: 46.68px;
-    height: 79.2px;
     position: relative;
     z-index: 1;
+}
+
+@media screen and (max-width: 767.98px) {
+    .btn__container {
+        padding: 1.46em 0.365em 1.46em 0.365em;
+    }
+    .btn {
+        width: 0.73em;
+        height: 1.2375em;
+    }
+}
+
+
+@media screen and (min-width: 1240px) {
+    .btn__container {
+        padding: 1.46em;
+    }
+    .btn {
+        width: 46.68px;
+        height: 79.2px;
+    }
 }

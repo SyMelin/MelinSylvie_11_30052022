@@ -6,7 +6,6 @@ function Gallery({pics, length, accId}) {
     const galleryWidth = "100%"
     const ratio = 1 / (parseInt(length) + 1) * 100
     const wrapperWidth= `${parseInt(galleryWidth) * (parseInt(length) + 1)}%`
-    const galleryWidthInt = parseInt(galleryWidth)
     const picWidth = ratio
     const picWidthPc = `${ratio}%`
     // console.log(picWidthPc)

@@ -8,7 +8,6 @@ function Button({direction, translateLength, setTranslateLength, picNumber, upda
 
     function goPrev() {
         if (picNumber > 1) {
-        // console.log("CLIC")
         setTranslateLength(translateLength + picWidth)
         updatePicNumber(picNumber - 1)
         } else {
@@ -19,7 +18,6 @@ function Button({direction, translateLength, setTranslateLength, picNumber, upda
   
    function goNext() {
        if (picNumber < length) {
-        // console.log("CLIC")
         setTranslateLength(translateLength - picWidth)
         updatePicNumber(picNumber + 1)
        } else {
