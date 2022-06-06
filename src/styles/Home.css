@@ -7,6 +7,8 @@
     justify-items: center;
     background-color: #F7F7F7;
     border-radius: 1.5625em;
+    margin-top: 2.6875em;
+    margin-bottom: 2.6875em;
     padding: 3.5em 3.125em;
-    max-width: 1240px;
+    max-width: 100%;
 }

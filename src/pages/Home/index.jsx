@@ -9,7 +9,7 @@ function Home() {
   const AccomodationsList = data
 
   return (
-    <div>
+    <div className='home__container'>
       <Banner type='home'/>
       <div className='cards__container'>
         {AccomodationsList.map((accomodation) => (

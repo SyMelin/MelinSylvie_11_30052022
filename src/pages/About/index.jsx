@@ -22,7 +22,7 @@ const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownT
 
 function About() {
     return (
-      <div>
+      <div className='about__container'>
         <Banner type='about' />
         <div className='dropdowns__container'>
         {dropdownsList.map((dropdown) => (

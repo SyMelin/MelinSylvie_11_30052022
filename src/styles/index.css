@@ -1,0 +1,10 @@
+body {
+    color: #FF6060;
+    font-family: "Montserrat", sans-serif;
+}
+
+.home__container, .accomodation__container, .about__container, .error__container {
+    width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+}

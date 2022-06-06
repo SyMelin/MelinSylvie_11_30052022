@@ -1,5 +1,5 @@
 .dropdown__top {
-    color: white;
+    color: #FFFFFF;
     background-color: #FF6060;
     height: 3.25em;
     border-radius: 0.625em;
@@ -13,7 +13,6 @@
 }
 
 .dropdown__title {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 1.125em;
 }
@@ -23,10 +22,8 @@
 }
 
 .dropdown__bottom {
-    color: #FF6060;
     background-color: #f7f7f7;
     border-radius: 0.625em;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 1.125em;
     padding: 3.125em 1.25em;

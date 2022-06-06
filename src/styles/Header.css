@@ -2,6 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 1240px;
+    margin: 2.5em auto 1.25em auto;
 }
 
 .logo--img {
@@ -9,8 +11,7 @@
 }
 
 .nav__link{
-    color: #ff6060;
-    font-family: "Montserrat", sans-serif;
+    color: #FF6060;
     font-weight: 500;
     font-size: 1.5em;
     text-decoration: none;

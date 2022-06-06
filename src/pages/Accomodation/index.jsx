@@ -30,24 +30,24 @@ function Accomodation() {
     //console.log ('hostName', hostName)
 
     return (
-        <div className='accomodation__wrapper'>
+        <div className='accomodation__container'>
             <Gallery
                 pics={accomodationData.pictures}
                 length={accomodationData.pictures.length}
                 accId={accomodationID}
             />
-            <div className='accomodation__mainInfo'>
-                <div className='mainInfo__top'>
-                    <div className='accomodation'>
+            <div className='accomodation__info'>
+                <div className='info__top'>
+                    <div className='accomodation__data'>
                         <h1 className="accomodation__title">{accomodationData.title}</h1>
                         <p className='accomodation__location'>{accomodationData.location}</p>
                     </div>
-                    <div className='host'>
+                    <div className='host__data'>
                         <p className='host__name'>{hostName[0]}<br />{hostName[1]}</p>
                         <img className='host__picture' src={accomodationData.host.picture} alt="" />
                     </div>
                 </div>
-                <div className='mainInfo__bottom'>
+                <div className='info__bottom'>
                     <div className='accomodation__tags'>
                         {accomodationData.tags.map((tag) => (
                             <div className='tag'>{tag}</div>
