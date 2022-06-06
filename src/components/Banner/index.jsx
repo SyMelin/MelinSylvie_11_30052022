@@ -14,7 +14,7 @@ function Banner({type}) {
                     alt=''
                 />
                 <span className='banner__filter'></span>
-                <h1 className='banner__title'>Chez vous, partout et ailleurs</h1>
+                <h1 className='banner__title'><span>Chez vous,&nbsp;</span><span>partout et ailleurs</span></h1>
             </div>      
         : type === 'about' ?
             <div className='banner__container'>

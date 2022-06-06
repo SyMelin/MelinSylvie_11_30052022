@@ -2,11 +2,10 @@
     position: relative;
     overflow: hidden;
     display: flex;
+    /*
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 13.938em;
-    border-radius: 1.5625em;
+    align-items: center;*/
+   
 }
 
 .banner__filter {
@@ -19,19 +18,47 @@
 }
 
 .banner__img {
+    width: 100%;
     object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .banner__title {
     font-weight: 500;
-    font-size: 3em;
     width: 100%;
     height: 100%;
     border-radius: inherit;
     display: flex;
-    justify-content: center;
-    align-items: center;
     color: #FFFFFF;
     position: absolute;
     z-index: 1;
+    margin: 0;
+}
+
+@media screen and (max-width: 767.98px) {
+    .banner__container {
+        width: 100%;
+        height: 6.9375em;
+        border-radius: 0.625em;
+    }
+    .banner__title {
+        font-size: 1.5em;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 1em;
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .banner__container {
+        width: 100%;
+        height: 13.938em;
+        border-radius: 1.5625em;
+    }
+    .banner__title {
+        font-size: 3em;
+        justify-content: center;
+        align-items: center;
+    }
 }
