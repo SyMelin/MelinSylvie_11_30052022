@@ -1,7 +1,6 @@
 .gallery {
     width: 100%;
     height: 25.938em;
-    /*border: 1px solid orange;*/
     display: flex;
     position: relative;
 }
@@ -38,10 +37,16 @@
     .gallery {
         height: 15.9375em;
     }
+    .gallery__view {
+        border-radius: 0.625em;
+    }
 }
 
 @media screen and (min-width: 1240px) {
     .gallery {
         height: 25.938em;
+    }
+    .gallery__view {
+        border-radius: 1.5625em;
     }
 }
