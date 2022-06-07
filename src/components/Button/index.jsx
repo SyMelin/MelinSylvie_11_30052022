@@ -4,7 +4,6 @@ import arrowRight from '../../assets/arrowRight.svg'
 import '../../styles/Button.css'
 
 function Button({direction, translateLength, setTranslateLength, picNumber, updatePicNumber, picWidth, length}) {
-    const src =  direction === 'previous' ? arrowLeft : direction === 'next' ? arrowRight : null
 
     function goPrev() {
         if (picNumber > 1) {
@@ -26,8 +25,30 @@ function Button({direction, translateLength, setTranslateLength, picNumber, upda
        }
    }
 
+   const src =  direction === 'previous' ? arrowLeft : direction === 'next' ? arrowRight : null
+   const changePic = direction === 'previous' ? goPrev : direction === 'next' ? goNext : null
+
     return (
-        <React.Fragment>
+        <div className='btn__container' onClick= {changePic}>
+                <img
+                    className={`btn btn--${direction}`}
+                    src={src}
+                    alt={direction}
+                /> 
+            </div>
+    )    
+}
+
+export default Button
+
+
+
+/*
+
+*/
+
+/*
+<React.Fragment>
             {direction === 'previous' ?
             <div className='btn__container' onClick={goPrev}>
                 <img
@@ -45,8 +66,4 @@ function Button({direction, translateLength, setTranslateLength, picNumber, upda
                 /> 
             </div>
             : null}
-        </React.Fragment>
-    )    
-}
-
-export default Button
+        </React.Fragment>   */
