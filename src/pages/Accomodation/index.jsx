@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Gallery from '../../components/Gallery'
 import Stars  from '../../components/Stars'
-import Dropdown from '../../components/Dropdown'
+import DropdownContainer from '../../components/DropdownContainer'
 import data from '../../data/accomodationsList.json'
 import '../../styles/Accomodation.css'
 
@@ -36,22 +36,14 @@ function Accomodation() {
         fetchAccomodation()
         })
     */
-   
 
+    //On sépare le prénom du nom pour pouvoir afficher l'ensemble sur 2 lignes
+    const hostName = accomodationData.host.name.split(" ")
+   
+    //Les dropdowns sont composés de 2 sous-parties: un titre et un contenu
+    //On renseigne alors les tableaux: dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
     const dropdownTitles = ["Description", "Équipements"]
     const dropdownTexts= [accomodationData.description, accomodationData.equipments]
-    const dropdownContent= {title:"", text:""}
-
-    function fillDropDownContent(index) {
-        const dropdownFilled = { title: dropdownTitles[index], text: dropdownTexts[index]}
-        return dropdownFilled
-    }
-    
-    const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownTitles.indexOf(title)))
-    //console.log(dropdownsList)
-    const hostName = accomodationData.host.name.split(" ")
-    //console.log ('hostName', hostName)
-    
 
     return (
        <div className='accomodation__container'>
@@ -83,15 +75,11 @@ function Accomodation() {
                     />
                 </div>
             </div>
-            <div className='accomodation__dropdowns'>
-                {dropdownsList.map((dropdown) => (
-                    <Dropdown
-                        key={`dropdown--${dropdown.index}`}
-                        title={dropdown.title}
-                        text={dropdown.text}
-                    />
-                ))}
-            </div>
+            <DropdownContainer 
+                dropdownTitles={dropdownTitles}
+                dropdownTexts={dropdownTexts}
+                type='accomodation'
+            />
         </div>
     )
 

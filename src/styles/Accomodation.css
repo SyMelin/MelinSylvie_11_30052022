@@ -109,13 +109,6 @@
         width: 2em;
         height: 2em;
     }
-    .accomodation__dropdowns {
-        width: 100%;
-        display: grid;
-        row-gap: 1.6em;
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-    }
 }
 
 @media screen and (min-width: 1240px) {
@@ -144,12 +137,5 @@
     .host__picture {
         width: 4em;
         height: 4em;
-    }
-    .accomodation__dropdowns {
-        width: 100%;
-        display: grid;
-        column-gap: 4.75em;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(1, 1fr);
     }
 }

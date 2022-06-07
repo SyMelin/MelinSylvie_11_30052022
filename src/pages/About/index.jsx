@@ -1,9 +1,11 @@
 import Banner from '../../components/Banner'
-import Dropdown from '../../components/Dropdown'
+import DropdownContainer from '../../components/DropdownContainer'
 import '../../styles/About.css'
 
-const dropdownTitles = ["Fiabilité", "Respect", "Service", "Sécurité"]
 
+//Les dropdowns sont composés de 2 sous-parties : un titre et un contenu
+//On renseigne alors les tableaux : dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
+const dropdownTitles = ["Fiabilité", "Respect", "Service", "Sécurité"]
 const dropdownTexts = [
   "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.",
   "La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.",
@@ -11,28 +13,15 @@ const dropdownTexts = [
   "La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes."
 ]
 
-const dropdownContent= {title:"", text:""}
-
-function fillDropDownContent(index) {
-  const dropdownFilled = { title: dropdownTitles[index], text: dropdownTexts[index]}
-  return dropdownFilled
-}
-const dropdownsList= dropdownTitles.map((title) => fillDropDownContent(dropdownTitles.indexOf(title)))
-//console.log(dropdownsList)
-
 function About() {
     return (
       <div className='about__container'>
         <Banner type='about' />
-        <div className='dropdowns__container'>
-        {dropdownsList.map((dropdown) => (
-          <Dropdown
-            key={`dropdown--${dropdown.index}`}
-            title={dropdown.title}
-            text={dropdown.text}
-          />
-        ))}
-      </div>  
+        <DropdownContainer 
+          dropdownTitles={dropdownTitles}
+          dropdownTexts={dropdownTexts}
+          type='about'
+        />
       </div>
     );
   }

@@ -1,0 +1,27 @@
+.about__dropdowns{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+@media screen and (max-width: 767.98px) {
+    .accomodation__dropdowns {
+        width: 100%;
+        display: grid;
+        row-gap: 1.6em;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 1240px) {
+    .accomodation__dropdowns {
+        width: 100%;
+        display: grid;
+        column-gap: 4.75em;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+}

@@ -40,30 +40,3 @@ function Button({direction, translateLength, setTranslateLength, picNumber, upda
 }
 
 export default Button
-
-
-
-/*
-
-*/
-
-/*
-<React.Fragment>
-            {direction === 'previous' ?
-            <div className='btn__container' onClick={goPrev}>
-                <img
-                    className={`btn btn--${direction}`}
-                    src={src}
-                    alt={direction}
-                /> 
-            </div>
-            : direction === 'next' ?
-            <div className='btn__container' onClick={goNext}>
-                <img
-                    className={`btn btn--${direction}`}
-                    src={src}
-                    alt={direction}
-                /> 
-            </div>
-            : null}
-        </React.Fragment>   */
