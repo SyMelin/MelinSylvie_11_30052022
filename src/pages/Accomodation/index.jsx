@@ -6,16 +6,33 @@ import Dropdown from '../../components/Dropdown'
 import data from '../../data/accomodationsList.json'
 import '../../styles/Accomodation.css'
 
-const dropdownTitles = ["Description", "Équipements"]
-
-
 function Accomodation() {
-    const AccomodationsList = data
-    const { accomodationID } = useParams()
-    //console.log( accomodationID)
-    const accomodationData = AccomodationsList.find(accomodation => accomodation.id === accomodationID)
+   // const accomodationsList = data
+    const  {accomodationID}  = useParams()
+    console.log( accomodationID)
+   // const accomodationData = AccomodationsList.find(accomodation => accomodation.id === accomodationID)
     //console.log(accomodationData)
 
+    const request = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?' + new URLSearchParams({id:`${{accomodationID}}`}).toString()
+   // console.log('request', request)
+   // const[accomodationData, setAccomodationData] = useState({})
+   
+
+    let accomodationData
+
+    useEffect(() => {
+        console.log(request)
+        fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?id=c67ab8a7')
+        .then((response) => console.log('test', response))//response.json())
+        .then((response) => {
+            console.log('res', response)
+           // setAccomodationData(response)
+        })
+        .catch((error) => console.log(error))
+    })
+
+
+    const dropdownTitles = ["Description", "Équipements"]
     const dropdownTexts= [accomodationData.description, accomodationData.equipments]
     const dropdownContent= {title:"", text:""}
 

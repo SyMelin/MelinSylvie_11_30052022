@@ -9,13 +9,15 @@ function Home() {
   const[accomodationsList, setAccomodationsList] = useState([])
 
   useEffect(() => {
-    fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
-    .then((response) => response.json())
-    .then((response) => {
-      console.log('res', response)
-      setAccomodationsList(response)
-    })
-    .catch((error) => console.log(error))
+    async function fetchAccomodations() {
+      try {
+        const response =  await fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
+        setAccomodationsList(await response.json())
+      } catch (error) {
+        console.log(error)
+      } 
+    }
+    fetchAccomodations()
     }, [])
 
   return (
