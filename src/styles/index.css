@@ -3,9 +3,25 @@
 body {
     color: #FF6060;
     font-family: "Montserrat", sans-serif;
+    margin: 0;
 }
 
-@media screen and (min-width: 1240px) {
+
+@media screen and (max-width: 991.98px) {
+    .header, .home__container, .accomodation__container, .about__container, .error__container {
+        margin-left: 3.25%;
+        margin-right: 3.25%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header, .home__container, .accomodation__container, .about__container, .error__container {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
     .header, .home__container, .accomodation__container, .about__container, .error__container {
         width: 1240px;
         margin-left: auto;

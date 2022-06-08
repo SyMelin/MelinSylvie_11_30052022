@@ -16,7 +16,14 @@
     }
 }
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: 576px) and (max-width: 1439.98px) {
+    .card__container {
+        width: 95%;
+        height : 100%;
+    }
+}
+
+@media screen and (min-width: 1440px) {
     .card__container {
         width: 21.25em;
         height: 21.25em;
@@ -33,8 +40,8 @@
 .card__filter {
     position: absolute;
     display: flex;
-    width: inherit;
-    height: inherit;
+    width: 100%;
+    height: 100%;
     border-radius: inherit;
     background: linear-gradient(rgba(225, 225, 225, 0), 85%, rgba(0, 0, 0, 0.55));
     z-index: 1;
