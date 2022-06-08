@@ -26,7 +26,6 @@ function Gallery({pics, length, accId}) {
                     {pics.map((pic, index) =>
                         <div
                             key={`${accId}__photo--${index}`}
-                            id={`${accId}__photo--${index}`}
                             className='pic__container'
                             style={{
                                 width: picWidthPc,
@@ -40,6 +39,7 @@ function Gallery({pics, length, accId}) {
             { length > 1 ?
                 <div className='gallery__nav'>
                     {['previous', 'next'].map((el) => <Button
+                                                            key = {`galleryButton--${el}`}
                                                             direction={el}
                                                             translateLength={translateLength}
                                                             setTranslateLength={setTranslateLength}
