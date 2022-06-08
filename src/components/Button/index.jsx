@@ -33,7 +33,7 @@ function Button({direction, translateLength, setTranslateLength, picNumber, upda
                 <img
                     className={`btn btn--${direction}`}
                     src={src}
-                    alt={direction}
+                    alt={`see ${direction} picture`}
                 /> 
             </div>
     )    

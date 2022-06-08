@@ -31,7 +31,7 @@ function Gallery({pics, length, accId}) {
                                 width: picWidthPc,
                             }}
                         >
-                            <img className='gallery__img' src={pic} alt='' />
+                            <img className='gallery__img' src={pic} alt={`logement photo ${picNumber}`} />
                         </div>
                     )}
                 </div>
