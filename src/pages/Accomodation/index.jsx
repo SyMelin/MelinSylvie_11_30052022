@@ -8,53 +8,44 @@ import '../../styles/Accomodation.css'
 
 function Accomodation() {
     const {accomodationID}  = useParams()
-   // console.log( accomodationID)
-    const accomodationsList = data
-    const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationID)
+   //console.log( accomodationID)
+    //const accomodationsList = data
+    //const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationID)
     //console.log(accomodationData)
 
-   // const[accomodationData, setAccomodationData] = useState({})
-    /*
-    const params = new URLSearchParams({id:`${accomodationID}`})
-    //const url = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?' + new URLSearchParams({id:`${accomodationID}`}).toString()
-    //'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?id=c67ab8a7' 
-    //const url = `https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?${ params.toString() }`
+    const[accomodations, setAccomodations] = useState([])
+
     const url = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
 
+   
     useEffect(() => {
-        async function fetchAccomodation() {
+        async function fetchAccomodations() {
           try {
-            const response =  await fetch(url)
-            console.log('res', await response)
-            const accomodations = await response.json()
-            console.log('accomodations', accomodations)
-          //  const {accomodationData} = 
-            console.log(accomodationData)
-           // setAccomodationData(accomodations.find(accomodation => accomodation.id === accomodationID))
-            console.log('bonjour', accomodationData)
+            const response =  await fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
+            setAccomodations(await response.json())
           } catch (error) {
             console.log(error)
-          } finally {
-            console.log('hello')
-
-          }
+          } 
         }
-        fetchAccomodation()
-        })
-    
-*/
+        fetchAccomodations()
+        }, [])
+        console.log(accomodations)
+        const accomodationData = accomodations.find(accomodation => accomodation.id === accomodationID)
+        console.log('data', accomodationData)
+
     //On sépare le prénom du nom pour pouvoir afficher l'ensemble sur 2 lignes
-    const hostName = accomodationData.host.name.split(" ")
+   // const hostName = accomodationData.host.name.split(" ")
+   // console.log('hostName', hostName)
    
     //Les dropdowns sont composés de 2 sous-parties: un titre et un contenu
     //On renseigne alors les tableaux: dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
-    const dropdownTitles = ["Description", "Équipements"]
-    const dropdownTexts= [accomodationData.description, accomodationData.equipments]
-/*
+   // const dropdownTitles = ["Description", "Équipements"]
+   // const dropdownTexts= [accomodationData.description, accomodationData.equipments]
+
     return (
         <span>HELLO</span>
     )
-*/
+/*
     return (
        <div className='accomodation__container'>
             <Gallery
@@ -91,7 +82,7 @@ function Accomodation() {
                 type='accomodation'
             />
         </div>
-    )
+    )*/
 }
 
 export default Accomodation
