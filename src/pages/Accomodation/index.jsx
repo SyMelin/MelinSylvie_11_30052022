@@ -3,28 +3,34 @@ import { useParams } from 'react-router-dom'
 import Gallery from '../../components/Gallery'
 import Stars  from '../../components/Stars'
 import DropdownContainer from '../../components/DropdownContainer'
-import data from '../../data/accomodationsList.json'
+//import data from '../../data/accomodationsList.json'
 import '../../styles/Accomodation.css'
 
 function Accomodation() {
-    const  {accomodationID}  = useParams()
-    // console.log( accomodationID)
-    const accomodationsList = data
-    const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationID)
+    const {accomodationID}  = useParams()
+   // console.log( accomodationID)
+    //const accomodationsList = data
+    //const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationID)
     //console.log(accomodationData)
 
-    /*
-    const request = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?' + new URLSearchParams({id:`${accomodationID}`}).toString()
-    // console.log('request', request)
     const[accomodationData, setAccomodationData] = useState({})
-    */
-    /*
+    
+    const params = new URLSearchParams({id:`${accomodationID}`})
+    //const url = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?' + new URLSearchParams({id:`${accomodationID}`}).toString()
+    //'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?id=c67ab8a7' 
+    //const url = `https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json?${ params.toString() }`
+    const url = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
+
     useEffect(() => {
         async function fetchAccomodation() {
           try {
-            const response =  await fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
-            //console.log('res', await response.json())
-           setAccomodationData(response.json())
+            const response =  await fetch(url)
+            console.log('res', await response)
+            const accomodations = await response.json()
+            console.log('accomodations', accomodations)
+          //  const {accomodationData} = 
+            console.log(accomodationData)
+           // setAccomodationData(accomodations.find(accomodation => accomodation.id === accomodationID))
             console.log('bonjour', accomodationData)
           } catch (error) {
             console.log(error)
@@ -35,16 +41,20 @@ function Accomodation() {
         }
         fetchAccomodation()
         })
-    */
+    
 
     //On sépare le prénom du nom pour pouvoir afficher l'ensemble sur 2 lignes
-    const hostName = accomodationData.host.name.split(" ")
+   // const hostName = accomodationData.host.name.split(" ")
    
     //Les dropdowns sont composés de 2 sous-parties: un titre et un contenu
     //On renseigne alors les tableaux: dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
-    const dropdownTitles = ["Description", "Équipements"]
-    const dropdownTexts= [accomodationData.description, accomodationData.equipments]
+   // const dropdownTitles = ["Description", "Équipements"]
+   // const dropdownTexts= [accomodationData.description, accomodationData.equipments]
 
+    return (
+        <span>HELLO</span>
+    )
+/*
     return (
        <div className='accomodation__container'>
             <Gallery
@@ -82,6 +92,7 @@ function Accomodation() {
             />
         </div>
     )
+*/
 
 }
 

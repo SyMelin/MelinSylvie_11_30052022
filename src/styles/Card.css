@@ -10,7 +10,8 @@
 
 @media screen and (max-width: 575.98px) {
     .card__container {
-        width: 20.938em;
+       /* width: 20.938em;*/
+       width: 100%;
         height: 15.938em;
     }
 }

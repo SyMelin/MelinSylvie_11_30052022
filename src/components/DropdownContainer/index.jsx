@@ -15,9 +15,9 @@ function DropdownContainer({ dropdownTitles, dropdownTexts, type}) {
 
     return (
         <div className= {`dropdowns__container ${type}__dropdowns `}>
-            {dropdownsList.map((dropdown) => (
+            {dropdownsList.map((dropdown, index) => (
             <Dropdown
-                key={`${type}Dropdown--${dropdown.index}`}
+                key={`${type}Dropdown--${index}`}
                 title={dropdown.title}
                 text={dropdown.text}
             />
