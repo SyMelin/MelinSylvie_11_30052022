@@ -6,6 +6,9 @@ body {
     margin: 0;
 }
 
+.header, .home__container, .accomodation__container, .about__container, .error__container {
+    min-width: 330px;
+}
 
 @media screen and (max-width: 991.98px) {
     .header, .home__container, .accomodation__container, .about__container, .error__container {

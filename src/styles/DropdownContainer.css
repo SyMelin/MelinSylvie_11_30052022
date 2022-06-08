@@ -1,9 +1,21 @@
-.about__dropdowns{
+.about__dropdowns {
     display: flex;
     flex-direction: column;
     row-gap: 2em;
     margin-top: 2em;
     margin-bottom: 2em;
+}
+
+@media screen and (min-width: 991.98px) {
+    .about__dropdowns {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .about__dropdowns {
+        width: 85%;
+    }
 }
 
 @media screen and (max-width: 767.98px) {

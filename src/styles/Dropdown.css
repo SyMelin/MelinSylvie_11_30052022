@@ -25,7 +25,7 @@
     list-style: none;
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 991.98px) {
     .dropdown__top{
         border-radius: 0.3125em;
         height: 1.88em;
@@ -46,7 +46,7 @@
     }
 }
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: 992px) {
     .dropdown__top{
         border-radius: 0.625em;
         height: 3.25em;
