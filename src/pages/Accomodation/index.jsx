@@ -1,8 +1,8 @@
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import Gallery from '../../components/Gallery'
 import Stars  from '../../components/Stars'
 import DropdownContainer from '../../components/DropdownContainer'
-import Error from '../../components/Error'
+//import Error from '../../components/Error'
 import { useFetch } from '../../utils/hooks'
 import '../../styles/Accomodation.css'
 
@@ -12,7 +12,7 @@ function Accomodation() {
     const {accomodationId}  = useParams()
 
     if (error) {
-        return <Error />
+        return <Navigate to="*" replace="true" />
     }
 
     if (isLoading === false) {
