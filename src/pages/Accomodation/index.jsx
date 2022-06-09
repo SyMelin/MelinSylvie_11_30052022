@@ -4,43 +4,72 @@ import Gallery from '../../components/Gallery'
 import Stars  from '../../components/Stars'
 import DropdownContainer from '../../components/DropdownContainer'
 import data from '../../data/accomodationsList.json'
+import { useFetch } from '../../utils/hooks'
 import '../../styles/Accomodation.css'
 
 function Accomodation() {
-    const {accomodationID}  = useParams()
-   //console.log( accomodationID)
+
+const { data, isLoading } = useFetch ('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
+
+const accomodationsList = data
+  
+  
+const {accomodationId}  = useParams()
+console.log(accomodationId)
+
+const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationId)
+
+console.log(accomodationData)
+
     //const accomodationsList = data
     //const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationID)
     //console.log(accomodationData)
 
-    const[accomodations, setAccomodations] = useState([])
+    //const[accomodation, setAccomodation] = useState({})
 
-    const url = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
+   // const url = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
 
-   
+   /*
     useEffect(() => {
         async function fetchAccomodations() {
           try {
             const response =  await fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
-            setAccomodations(await response.json())
+            const datas = await response.json()
+            console.log(await datas)
+           const test = datas.find(accomodation => accomodation.id === '7af00cd6')
+          console.log('test', test)
+            setAccomodation(test)
+            const hostName = test.host.name.split(" ")
+            console.log('hostName', hostName)
           } catch (error) {
             console.log(error)
-          } 
+          }
         }
         fetchAccomodations()
+       // console.log({accomodation})
+       
         }, [])
-        console.log(accomodations)
-        const accomodationData = accomodations.find(accomodation => accomodation.id === accomodationID)
-        console.log('data', accomodationData)
+       console.log('hello', accomodation)
+/*
+    useEffect(() => {
+        //console.log('2e useEffect', {accomodation})
+        //On sépare le prénom du nom pour pouvoir afficher l'ensemble sur 2 lignes
+        const hostName = {accomodation}.host.name.split(" ")
+        console.log('hostName', hostName)
+    }, [accomodation])*/
+      
+      
+    //console.log('data', accomodationData)
+    ///console.log(test.host.name)
 
     //On sépare le prénom du nom pour pouvoir afficher l'ensemble sur 2 lignes
-   // const hostName = accomodationData.host.name.split(" ")
-   // console.log('hostName', hostName)
+const hostName = accomodationData.host.name.split(" ")
+ console.log('hostName', hostName)
    
     //Les dropdowns sont composés de 2 sous-parties: un titre et un contenu
     //On renseigne alors les tableaux: dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
-   // const dropdownTitles = ["Description", "Équipements"]
-   // const dropdownTexts= [accomodationData.description, accomodationData.equipments]
+  const dropdownTitles = ["Description", "Équipements"]
+  const dropdownTexts= [accomodationData.description, accomodationData.equipments]
 
     return (
         <span>HELLO</span>
