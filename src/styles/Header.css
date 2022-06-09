@@ -9,11 +9,11 @@
     font-weight: 500;
 }
 
-.nav__link--notUnderlined {
+.nav__link--notActive {
     text-decoration: none;
 }
 
-.nav__link--underlined{
+.nav__link--active{
     text-decoration: underline;
 }
 

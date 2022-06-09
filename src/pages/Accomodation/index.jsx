@@ -1,86 +1,42 @@
-import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Gallery from '../../components/Gallery'
 import Stars  from '../../components/Stars'
 import DropdownContainer from '../../components/DropdownContainer'
-import data from '../../data/accomodationsList.json'
+import Error from '../../components/Error'
 import { useFetch } from '../../utils/hooks'
 import '../../styles/Accomodation.css'
 
 function Accomodation() {
 
-const { data, isLoading } = useFetch ('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
+    const { data, isLoading, error } = useFetch ('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
+    const {accomodationId}  = useParams()
 
-const accomodationsList = data
-  
-  
-const {accomodationId}  = useParams()
-console.log(accomodationId)
+    if (error) {
+        return <Error />
+    }
 
-const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationId)
+    if (isLoading === false) {
+        console.log(data)
+        const accomodationsList = [...data]
+        console.log('acc', accomodationsList)
+        const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationId)
+        console.log(accomodationData)
 
-console.log(accomodationData)
-
-    //const accomodationsList = data
-    //const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationID)
-    //console.log(accomodationData)
-
-    //const[accomodation, setAccomodation] = useState({})
-
-   // const url = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json'
-
-   /*
-    useEffect(() => {
-        async function fetchAccomodations() {
-          try {
-            const response =  await fetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
-            const datas = await response.json()
-            console.log(await datas)
-           const test = datas.find(accomodation => accomodation.id === '7af00cd6')
-          console.log('test', test)
-            setAccomodation(test)
-            const hostName = test.host.name.split(" ")
-            console.log('hostName', hostName)
-          } catch (error) {
-            console.log(error)
-          }
-        }
-        fetchAccomodations()
-       // console.log({accomodation})
-       
-        }, [])
-       console.log('hello', accomodation)
-/*
-    useEffect(() => {
-        //console.log('2e useEffect', {accomodation})
         //On sépare le prénom du nom pour pouvoir afficher l'ensemble sur 2 lignes
-        const hostName = {accomodation}.host.name.split(" ")
+        const hostName = accomodationData.host.name.split(" ")
         console.log('hostName', hostName)
-    }, [accomodation])*/
-      
-      
-    //console.log('data', accomodationData)
-    ///console.log(test.host.name)
 
-    //On sépare le prénom du nom pour pouvoir afficher l'ensemble sur 2 lignes
-const hostName = accomodationData.host.name.split(" ")
- console.log('hostName', hostName)
-   
-    //Les dropdowns sont composés de 2 sous-parties: un titre et un contenu
-    //On renseigne alors les tableaux: dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
-  const dropdownTitles = ["Description", "Équipements"]
-  const dropdownTexts= [accomodationData.description, accomodationData.equipments]
+        //Les dropdowns sont composés de 2 sous-parties: un titre et un contenu
+        //On renseigne alors les tableaux: dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
+        const dropdownTitles = ["Description", "Équipements"]
+        const dropdownTexts= [accomodationData.description, accomodationData.equipments]
 
-    return (
-        <span>HELLO</span>
-    )
-/*
-    return (
-       <div className='accomodation__container'>
+        return (
+            <div className='accomodation__container'>
             <Gallery
                 pics={accomodationData.pictures}
                 length={accomodationData.pictures.length}
-                accId={accomodationID}
+                accId={accomodationId}
             />
             <div className='accomodation__info'>
                 <div className='info__left'>
@@ -111,7 +67,9 @@ const hostName = accomodationData.host.name.split(" ")
                 type='accomodation'
             />
         </div>
-    )*/
+            
+        )
+    }
 }
 
 export default Accomodation
