@@ -16,15 +16,14 @@ function Accomodation() {
     }
 
     if (isLoading === false) {
-        console.log(data)
+       // console.log(data)
         const accomodationsList = [...data]
-        console.log('acc', accomodationsList)
+       // console.log('acc', accomodationsList)
         const accomodationData = accomodationsList.find(accomodation => accomodation.id === accomodationId)
-        console.log(accomodationData)
+       // console.log(accomodationData)
 
         //On sépare le prénom du nom pour pouvoir afficher l'ensemble sur 2 lignes
         const hostName = accomodationData.host.name.split(" ")
-        console.log('hostName', hostName)
 
         //Les dropdowns sont composés de 2 sous-parties: un titre et un contenu
         //On renseigne alors les tableaux: dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
