@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Banner from '../../components/Banner'
 import Card from '../../components/Card'
 //import Error from '../../components/Error'
@@ -9,9 +9,10 @@ function Home() {
 
   const { data, isLoading, error } = useFetch ('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
   const accomodationsList = data
+  const navigate = useNavigate()
 
   if (error) {
-    return <Navigate to="*" replace="true" />
+    return navigate("/*", {replace:true})
   }
 
   return (

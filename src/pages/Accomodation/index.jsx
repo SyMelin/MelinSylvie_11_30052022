@@ -1,8 +1,7 @@
-import { useParams, Navigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Gallery from '../../components/Gallery'
 import Stars  from '../../components/Stars'
 import DropdownContainer from '../../components/DropdownContainer'
-//import Error from '../../components/Error'
 import { useFetch } from '../../utils/hooks'
 import '../../styles/Accomodation.css'
 
@@ -10,9 +9,11 @@ function Accomodation() {
 
     const { data, isLoading, error } = useFetch ('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
     const {accomodationId}  = useParams()
+    const navigate = useNavigate()
+
 
     if (error) {
-        return <Navigate to="*" replace="true" />
+        return navigate("/*", {replace:true})
     }
 
     if (isLoading === false) {
