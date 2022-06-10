@@ -1,11 +1,8 @@
-import { Link } from 'react-router-dom'
-import { useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom'
 import logo from '../../assets/logo.svg'
 import '../../styles/Header.css'
 
 function Header() {
-  const location = useLocation();
-  const pathname = location.pathname
 
     return (
         <header className='header'>
@@ -13,8 +10,8 @@ function Header() {
               <img src={logo} alt="Kasa" className='logo--img'/>
           </Link>
           <nav className='nav'>
-            <Link to="/" className={ pathname === '/' ? 'nav__link nav__link--active' : 'nav__link nav__link--notActive'}>Accueil</Link>
-            <Link to="/about" className={ pathname === '/about' ? 'nav__link nav__link--active' : 'nav__link nav__link--notActive'}>A propos</Link>
+            <NavLink to="/" className={({ isActive }) => "nav__link nav__link" + (isActive ? "--active" : "--notActive")}>Accueil</NavLink>
+            <NavLink to="/about" className={({ isActive }) => "nav__link nav__link" + (isActive ? "--active" : "--notActive")}>A propos</NavLink>
           </nav>
         </header>    
     )
