@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import Banner from '../../components/Banner'
 import Card from '../../components/Card'
-//import Error from '../../components/Error'
 import { useFetch } from '../../utils/hooks'
 import '../../styles/Home.css'
 
