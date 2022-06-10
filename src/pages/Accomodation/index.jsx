@@ -28,7 +28,7 @@ function Accomodation() {
         //Les dropdowns sont composés de 2 sous-parties: un titre et un contenu
         //On renseigne alors les tableaux: dropdownTitles qui contient les titres, dropdownTexts qui contient le texte
         const dropdownTitles = ["Description", "Équipements"]
-        const dropdownTexts= [accomodationData.description, accomodationData.equipments]
+        const dropdownTexts= [accomodationData.description, accomodationData.equipments] //Nb: description est une chaîne de caractère, equipments est un tableau
 
         return (
             <div className='accomodation__container'>
