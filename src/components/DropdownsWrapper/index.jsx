@@ -1,7 +1,7 @@
 import Dropdown from "../Dropdown"
-import '../../styles/DropdownContainer.css'
+import '../../styles/DropdownsWrapper.css'
 
-function DropdownContainer({ dropdownTitles, dropdownTexts, type}) {
+function DropdownsWrapper({ dropdownTitles, dropdownTexts, type}) {
     
     let dropdownsList=[]
 
@@ -15,7 +15,7 @@ function DropdownContainer({ dropdownTitles, dropdownTexts, type}) {
     }
     
     return (
-        <div className={`dropdowns__container ${type}__dropdowns `}>
+        <div className={`dropdowns__wrapper ${type}__dropdowns `}>
             {dropdownsList.map((dropdown, index) => (
             <Dropdown
                 key={`${type}Dropdown--${index}`}
@@ -27,4 +27,4 @@ function DropdownContainer({ dropdownTitles, dropdownTexts, type}) {
     )
 }
 
-export default DropdownContainer
+export default DropdownsWrapper

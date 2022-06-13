@@ -1,5 +1,5 @@
 import Banner from '../../components/Banner'
-import DropdownContainer from '../../components/DropdownContainer'
+import DropdownsWrapper from '../../components/DropdownsWrapper'
 import '../../styles/About.css'
 
 
@@ -17,7 +17,7 @@ function About() {
     return (
       <div className='about__container'>
         <Banner type='about' />
-        <DropdownContainer 
+        <DropdownsWrapper 
           dropdownTitles={dropdownTitles}
           dropdownTexts={dropdownTexts}
           type='about'

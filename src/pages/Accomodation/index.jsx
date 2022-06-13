@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import Gallery from '../../components/Gallery'
 import Stars  from '../../components/Stars'
-import DropdownContainer from '../../components/DropdownContainer'
+import DropdownsWrapper from '../../components/DropdownsWrapper'
 import { useFetch } from '../../utils/hooks'
 import '../../styles/Accomodation.css'
 
@@ -61,7 +61,7 @@ function Accomodation() {
                     />
                 </div>
             </div>
-            <DropdownContainer 
+            <DropdownsWrapper
                 dropdownTitles={dropdownTitles}
                 dropdownTexts={dropdownTexts}
                 type='accomodation'
