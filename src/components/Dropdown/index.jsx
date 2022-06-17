@@ -1,7 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import arrowUp from '../../assets/arrowUp.svg'
 import arrowDown from '../../assets/arrowDown.svg'
 import '../../styles/Dropdown.css'
+
+//La propriété 'text' d'un Dropdown correspond au contenu de la partie inférieure .dropdown__bottom
+//La propriété 'text' est soit une chaîne de caractères, soit un tableau d'items
+//Selon le type de 'text', string ou array, on crée soit un paragraphe reprenant le texte de la chaîne de caractère, soit une liste d'items du tableau
 
 function Dropdown ({title, text}) {
     const [isOpen, setIsOpen] = useState(false)
@@ -18,7 +22,7 @@ function Dropdown ({title, text}) {
                 />
             </div>
              { typeof text === 'object' ?
-                <ul className="dropdown__bottom dropdownList">{text.map((item, index) => <li  key={`dropdownListItem--${index}`}>{item}</li>)}</ul>
+                <ul className="dropdown__bottom dropdownList">{text.map((item, index) => <li key={`dropdownListItem--${index}`}>{item}</li>)}</ul>
                 : <p className="dropdown__bottom dropdownText">{text}</p>
                 }
         </div>
