@@ -11,10 +11,10 @@ function App() {
         <Router>
             <Header />
             <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route path="/accomodation/:accomodationId" element={<Accomodation />} />
-                <Route path="/about" element={<About />} />
-                <Route path="*" element={<Error />} />
+                <Route key="route-1-home" exact path="/" element={<Home />} />
+                <Route key="route-2-accomodation" path="/accomodation/:accomodationId" element={<Accomodation />} />
+                <Route key="route-3-about" path="/about" element={<About />} />
+                <Route key="route-4-error" path="*" element={<Error />} />
             </Routes>
             <Footer />
         </Router>

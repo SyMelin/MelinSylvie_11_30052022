@@ -1,6 +1,5 @@
 .footer {
     width: 100%;
-   /* position: absolute;*/
     bottom: 0;
     margin: 0;
     display: flex;
@@ -9,10 +8,9 @@
     justify-content: center;
     background-color: #000000;
     height: 13.0625em;
+    min-height: 13.0635em;
     color: #FFFFFF;
     font-weight: 500;
-   /* justify-self: start;*/
-   
 }
 
 .footer__logo {

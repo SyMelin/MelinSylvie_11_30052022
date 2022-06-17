@@ -33,7 +33,7 @@
     object-position: 50% 50%;
 }
 
-@media screen and (max-width: 767.98px) {
+@media screen and (max-width: 991.98px) {
     .gallery {
         height: 15.9375em;
     }
@@ -42,7 +42,7 @@
     }
 }
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: 992px) {
     .gallery {
         height: 25.938em;
     }

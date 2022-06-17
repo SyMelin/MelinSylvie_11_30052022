@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-  /*  height: 100%;*/
+    height: 100%;
     padding-bottom: 2em;
 }
 
@@ -87,11 +87,20 @@
 @media screen and (max-width: 575.98px) {
     .accomodation__info {
         flex-direction: column;
+        padding-top: 0.9375em;
+        padding-bottom: 0;
     }
     .info__right {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
+        align-items: center;
+    }
+    .accomodation__title {
+        padding-bottom: 0.3125em;
+    }
+    .accomodation__tags {
+        padding-top: 0.625em;;
     }
 }
 
@@ -105,12 +114,10 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        row-gap: 1.25em;
     }
 }
 
 @media screen and (max-width: 991.98px) {
-    
     .accomodation__title {
         font-size: 1.125em;
     }
@@ -120,6 +127,11 @@
     .tag {
         border-radius: 0.3125em;
         font-size: 0.625em;
+    }
+
+    .host__data {
+        padding-top: 1.03125em;
+        padding-bottom: 1.03125em;
     }
     
     .host__name {
@@ -132,7 +144,9 @@
 }
 
 @media screen and (min-width: 992px) {
-    
+    .info__right {
+        row-gap: 1.25em;
+    }
     .accomodation__title {
         font-size: 2.25em;
     }
@@ -143,8 +157,6 @@
         border-radius: 0.625em;
         font-size: 0.875em;
     }
-    
-
     .host__picture {
         width: 4em;
         height: 4em;

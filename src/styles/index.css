@@ -14,7 +14,7 @@ body {
     justify-content: space-between;
 }
 
-.header, .home__container, .accomodation__container, .about__container, .error__container {
+.header, .footer, .home__container, .accomodation__container, .about__container, .error__container {
     min-width: 330px;
 }
 
