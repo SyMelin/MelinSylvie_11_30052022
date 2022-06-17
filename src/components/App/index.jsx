@@ -7,18 +7,18 @@ import Footer from '../Footer';
 import Error from '../Error';
 
 function App() {
-    return [
+    return (
         <Router>
             <Header />
             <Routes>
-                <Route key="route-1-home" exact path="/" element={<Home />} />
-                <Route key="route-2-accomodation" path="/accomodation/:accomodationId" element={<Accomodation />} />
-                <Route key="route-3-about" path="/about" element={<About />} />
-                <Route key="route-4-error" path="*" element={<Error />} />
+                <Route exact path="/" element={<Home />} />
+                <Route path="/accomodation/:accomodationId" element={<Accomodation />} />
+                <Route path="/about" element={<About />} />
+                <Route path="*" element={<Error />} />
             </Routes>
             <Footer />
         </Router>
-    ]
+    )
 }
 
 export default App
