@@ -13,16 +13,10 @@ function Home() {
   
   const accomodationsList = data
   const navigate = useNavigate()
-/*
+
   if (error) {
     return navigate("/*", {replace:true})
   }
-  */
-  useEffect(() => {
-    if (error) {
-      navigate("/*", {replace:true})
-    }
-  }, [error, navigate]);
 
   return (
     <div className='home__container'>

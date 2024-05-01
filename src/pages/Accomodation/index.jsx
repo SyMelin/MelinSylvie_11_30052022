@@ -16,13 +16,10 @@ function Accomodation() {
     const {accomodationId}  = useParams()
     const navigate = useNavigate()
 
-
-    useEffect(() => {
-        if (error) {
-            navigate("/*", {replace:true})
-        }
-    }, [error, navigate])
-
+    if (error) {
+        navigate("/*", {replace:true})
+    }
+    
     if (isLoading === false) {
        // console.log(data)
         const accomodationsList = [...data]
