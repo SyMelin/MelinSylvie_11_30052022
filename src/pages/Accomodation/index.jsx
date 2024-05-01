@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Gallery from '../../components/Gallery'
 import Stars  from '../../components/Stars'
@@ -7,15 +8,20 @@ import { useFetch } from '../../utils/hooks'
 import '../../styles/Accomodation.css'
 
 function Accomodation() {
+    const corsProxy = 'https://api.allorigins.win/raw?url=' // CORS proxy to avoid CORS policy
+    const dataUrl = 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json' // URL of the data to fetch
 
-    const { data, isLoading, error } = useFetch ('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
+    const { data, isLoading, error } = useFetch(corsProxy + dataUrl);
+
     const {accomodationId}  = useParams()
     const navigate = useNavigate()
 
 
-    if (error) {
-        return navigate("/*", {replace:true})
-    }
+    useEffect(() => {
+        if (error) {
+            navigate("/*", {replace:true})
+        }
+    }, [error, navigate])
 
     if (isLoading === false) {
        // console.log(data)

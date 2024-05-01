@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Kasa - Frontend Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Kasa project, a frontend project for the OpenClassrooms training program. Kasa is a fictional French apartment rental service aiming for a complete website redesign.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+The goal of this project is to create a modern, responsive React application. The project involves building a new application from scratch, with a focus on creating responsive components, routes, and layouts.
 
-### `npm start`
+### Frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React Framework**: The project started with Create React App but has since been migrated to Vite for maintenance purposes.
+- **Routing**: React Router is used for application navigation.
+- **Styling**: The application uses CSS for responsive design.
+- **Functional Components**: React components are functional for improved code structure.
+- **Testing**: React Testing Library is used for frontend testing.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Backend
 
-### `npm test`
+- **No Backend Support**: Backend is not currently available.
+- **Mocked Data**: Data comes from a JSON file retrieved from [here](https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json).
+- **CORS Proxy**: A CORS proxy had to be added to access the data since the project assessment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prerequisites
 
-### `npm run build`
+- **Node.js v20.12.0**: Ensure Node.js is installed. Check with `node --version`.
+- **Vite**: This project was initially set up with Create React App but has since been migrated to Vite.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation and Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To install and run the project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/SyMelin/MelinSylvie_11_30052022.git
+   ```
 
-### `npm run eject`
+2. **Navigate to the Project Directory**:
+    ```bash
+    cd kasa-project
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Launch the Development Server**:
+    ```bash
+    npm run start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. **Access the Application**:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The app runs locally on port 5173. Open your browser and go to http://localhost:5173.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the LICENSE file for more information.
